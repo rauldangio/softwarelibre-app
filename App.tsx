@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StatusBar, Image, Text, View, StyleSheet, Dimensions } from 'react-native';
+import logo from './assets/gnuicon.png';
+
+const width = Dimensions.get("screen").width
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <SafeAreaView>
+      <StatusBar />
+      <Image style= {styles.logo} source={logo}/>
+    </SafeAreaView>
+    
   );
 }
 
+
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    logo: {
+      width: "100%",
+      height: 782 / 800 * width
+    }
+})
