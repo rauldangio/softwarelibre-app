@@ -8,13 +8,13 @@ import gimp from '../../assets/gimp.png';
 
 export default function(){
     return (
-      <View >
+      <View style={style.container} >
         <View>
-          <Text> Veja alguns softwares que você pode trocar para software livre!</Text>
+          <Text style={style.texto}> Veja alguns softwares que você pode trocar para software livre!</Text>
         </View>
 
         <View style={style.centered}>
-          <Text>Navegador</Text>
+          <Text style={style.tituloImagem}>Navegador</Text>
           <View style={style.imagens}>
             <Image style={style.imagem} source={chrome}/>
             <Image style={style.imagem} source={lwolf}/>
@@ -23,7 +23,7 @@ export default function(){
 
 
         <View style={style.centered}>
-          <Text>Sistema Operacional</Text>
+          <Text style={style.tituloImagem}>Sistema Operacional</Text>
           <View style={style.imagens}>
             <Image style={style.imagem} source={windows}/>
             <Image style={style.imagem} source={ubuntu}/>
@@ -31,7 +31,7 @@ export default function(){
         </View>
 
         <View style={style.centered}>
-          <Text>Editores de Imagem</Text>
+          <Text style={style.tituloImagem}>Editores de Imagem</Text>
           <View style={style.imagens}>
             <Image style={style.imagem} source={photoshop}/>
             <Image style={style.imagem} source={gimp}/>
@@ -45,27 +45,36 @@ export default function(){
 const style = StyleSheet.create({
 
   imagem:{
-    width: 32,
-    height: 32,
-  //  marginLeft: 40,
-//    marginRight: 40,
+    width: 60,
+    height: 60,
+
   },
   imagens: {
+    display: 'flex',
     flexDirection: 'row',
-    backgroundColor: "#ffc2c2",
-    paddingLeft: 20,
-    paddingRight: 20,
-
+    justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 20,
+    height: 70
   },
   centered:{
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    justifyContent: "center",
-    alignItems: "center",
-
+    width: 280,
     marginTop: 20
+  },
+  tituloImagem: {
+    textAlign: 'center',
+    fontFamily: "Inter",
+    fontSize: 16
+  },
+  container: {
+    display: 'flex',
+    justifyContent: 'space-around',
+    flexDirection: 'column',
+    alignItems: 'center'
+  },
+  texto: {
+    fontFamily: "Inter",
+    fontSize: 18,
+    textAlign: "center"
   }
-
 })
